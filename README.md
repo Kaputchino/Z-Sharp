@@ -137,3 +137,6 @@ func Main()
 }
 ```
 I am planning to change how error reporting works to report the document line number as well, but this is how it is for now.
+
+
+Note from Kaputchino: I'm gonna add librairies.
