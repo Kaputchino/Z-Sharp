@@ -137,5 +137,41 @@ func GetKey(keyName)
 	bool b = ZS.Input.GetKey(keyName)
 	return b
 }
+func Comb(n, r)
+{
+    return Perm(n ,r) / Fac(r)
+}
+
+func Perm(n, r)
+{
+    if n < 0 
+    {
+        ZS.System.PrintLine("n muss be superior or equal to 0")
+        return -1
+    }
+    if r < 0
+    {
+        ZS.System.PrintLine("r muss be superior or equal to 0")
+        return -1
+    }
+    if r > n
+    {
+        ZS.System.PrintLine("r muss be inferor or equal to n")
+        return -1
+    }
+    return Fac(n) / Fac(n - r)
+}
+
+func Fac(x)
+{
+    int r = 1
+    while x > 1
+    {
+        r = r * x
+        x = x - 1
+    }
+    return r
+}
+
 )"
 ;
