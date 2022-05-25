@@ -173,5 +173,20 @@ func Fac(x)
     return r
 }
 
+func taylorExp(x)
+{
+    float sum = 0
+    float term = 1
+    int i = 1
+    float sumterm = 1
+    while sum != sumterm
+    {
+        sum = sumterm
+        term = term * x / i
+        i = i + 1
+        sumterm = sumterm + term
+    }
+    return sum
+}
 )"
 ;
