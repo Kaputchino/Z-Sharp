@@ -1,11 +1,16 @@
 <img src="https://raw.githubusercontent.com/sam-astro/Z-Sharp/master/ExtraResources/ZS-Gem-Icon-Small.png"/><img src="https://raw.githubusercontent.com/sam-astro/Z-Sharp/master/ExtraResources/ZS-Logo-Light-Small.png"/>
 
+> Z-Sharp is no longer in development! This project was never meant to go beyond the scope of a simple thing I could make pong in, yet people continue to ask for features and fixes, and I continue to oblige. So sadly, even though this was a cool project in which I learned a lot, it will be ending now. I will eventually make some docs and standards for the syntax, and will still leave this repository open. This way anybody can make their own interpreter or compiler for it. I will also still accept pull requests for any changes to this repository.
+
 ## Introduction
-Z-Sharp is a custom programming language I made because I don't like c++ very much (Z-Sharp's interpreter is written in c++ though). Z-Sharp scripts have the file extension .ZS. The base syntax and formatting I would say is quite similar to C# or Python, but differs as task complexity increases. It has support for graphics using SDL2, and by default is not enabled.
+Z-Sharp is a custom programming language I made because I don't like c++ very much (Z-Sharp's interpreter is written in c++ though). Z-Sharp scripts have the file extension .ZS. The base syntax and formatting I would say is quite similar to C# or Python, but differs as task complexity increases. It also has support for graphics using SDL2.
 
 Before using Z#:
 There is ***no documentation***, ***strings*** barely work, ***performance*** isn't great, the syntax is ***very specific***, and most errors just cause it to ***crash without warning***. I am just a *single developer* working on this during my free time; between school, other projects, and YouTube. Z-Sharp will most likely never be finished, since it was really supposed to end when the video was published about it.
 If you are trying to use a common programming language feature, ask yourself this: ***Is this feature required to play pong?*** If not, then most likely that feature ***has not been implemented yet***. I initially only made the language so I could create pong and make a video about it, so it really is the ***bare minimum***.
+
+## Documentation and getting started:
+[The docs and tutorial](https://stevenrafft.github.io/ZSharpDocs/#/README)
 
 ## Installation
 Downloading or installing is very simple, here is how depending on your version and operating system:
@@ -23,35 +28,18 @@ Downloading or installing is very simple, here is how depending on your version 
 > If you don't want to install ZSharp on your device, or you want easier acces to the executable and .DLLs, another version is provided called `ZS_Win_Base_Raw.zip`. This just contains all of the files the installer puts on your computer.
 ### Linux
 1. Install requirements:
-   * You need the package ***libsdl2-dev***. 
 
-   For Debian based operating systems you can install it with
-   
-      ```$ sudo apt install libsdl2-dev```
+#### Debian
 
-   For Arch based operating systems you can install it with
+```
+$ sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
 
-   	  ```$ sudo pacman -S sdl2```
-      
-   * You also need the package ***libsdl2-image-dev***. 
+#### Arch
 
-   For Debian based operating systems you can install it with
-   
-      ```$ sudo apt install libsdl2-image-dev```
-
-   For Arch based operating systems you can install it with
-
-   	  ```$ sudo pacman -S sdl2_image```
-      
-   * You also need the package ***libsdl2-ttf-dev***. 
-
-   For Debian based operating systems you can install it with
-   
-      ```$ sudo apt install libsdl2-ttf-dev```
-
-   For Arch based operating systems you can install it with
-
-   	  ```$ sudo pacman -S sdl2_ttf```
+```
+$ sudo pacman -S sdl2 sdl2_image sdl2_ttf
+```
 
 2. Navigate to [the most recent release](https://github.com/sam-astro/Z-Sharp/releases) and download `ZSharp-Linux.zip`.
 3. Unzip `ZSharp-Linux.zip` and open the unzipped folder.
@@ -85,7 +73,7 @@ func Main()
     
     if s == "r"
     {
-        print s + " is r"
+        Printl(s + " is r")
     }
     
     int functionNumber = ExampleFunction("A", s)
@@ -99,8 +87,8 @@ func Main()
 /// be assigned at all on execute and can be left blank
 func ExampleFunction(inputA, inputB)
 {
-    print "In A is: " + inputA
-    print "In B is: " + inputB
+    Printl("In A is: " + inputA)
+    Printl("In B is: " + inputB)
     
     // Return a value to the valling location
     return 4
